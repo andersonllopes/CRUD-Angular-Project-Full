@@ -1,4 +1,3 @@
-import { getTestBed } from '@angular/core/testing';
 import { Funcionario } from './../model/funcionario';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -25,8 +24,8 @@ export class FuncionarioService {
     return this.httpClient.get<Funcionario>(`${this.baseURL}/${id}`);
   }
 
-  updateFuncionario(id: number, employee: Funcionario): Observable<Object>{
-    return this.httpClient.put(`${this.baseURL}/${id}`, employee);
+  updateFuncionario(id: number, funcionario: Funcionario): Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/${id}`, funcionario);
   }
 
   deleteFuncionario(id: number): Observable<Object>{

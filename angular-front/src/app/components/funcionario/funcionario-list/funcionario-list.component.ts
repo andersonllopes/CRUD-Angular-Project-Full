@@ -25,11 +25,11 @@ export class FuncionarioListComponent implements OnInit {
   }
 
   funcionarioDetails(id: number){
-    this.router.navigate(['employee-details', id]);
+    this.router.navigate(['details-funcionario', id]);
   }
 
   funcionarioUpdate(id: number){
-    this.router.navigate(['update-employee', id]);
+    this.router.navigate(['update-funcionario', id]);
   }
 
   funcionarioDelete(id: number){

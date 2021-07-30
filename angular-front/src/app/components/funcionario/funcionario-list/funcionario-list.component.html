@@ -1,7 +1,7 @@
-<h2> Lista de Funcionários</h2>
+<h2> Lista de Contatos</h2>
 <table class = "table table-striped">
     <thead>
-        <tr>
+        <tr align="center">
             <th> Nome</th>
             <th> Sobrenome </th>
             <th> Email </th>
@@ -9,12 +9,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let funcionario of funcionarios" >
+        <tr *ngFor = "let funcionario of funcionarios" align="center">
             <td> {{ funcionario.nome }} </td>
             <td> {{ funcionario.sobrenome }} </td>
             <td> {{ funcionario.email }} </td>
             <td>
-                <button (click) = "funcionarioUpdate(funcionario.id)" class = "btn btn-info"> Atualizar</button>
+                <button (click) = "funcionarioUpdate(funcionario.id)" class = "btn btn-dark"> Atualizar</button>
                 <button (click) = "funcionarioDelete(funcionario.id)" class = "btn btn-danger" style="margin-left: 10px"> Deletar</button>
                 <button (click) = "funcionarioDetails(funcionario.id)" class = "btn btn-info" style="margin-left: 10px"> Visualizar</button>
             </td>
