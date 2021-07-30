@@ -9,15 +9,27 @@ import { Observable } from 'rxjs';
 })
 export class FuncionarioService {
 
-  //private baseURL = "https://api.opendota.com/api/heroes";
-
   private baseURL = "http://localhost:8080/api/v1/funcionarios";
 
-  //private baseURL = "https://servicodados.ibge.gov.br/api/v2/censos/nomes";
-
-  constructor(private httpCliente: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   getFuncionarioList(): Observable<Funcionario[]>{
-    return this.httpCliente.get<Funcionario[]>(`${this.baseURL}`);
+    return this.httpClient.get<Funcionario[]>(`${this.baseURL}`);
+  }
+
+  createFuncionario(funcionario: Funcionario): Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}`, funcionario);
+  }
+
+  getFuncionarioById(id: number): Observable<Funcionario>{
+    return this.httpClient.get<Funcionario>(`${this.baseURL}/${id}`);
+  }
+
+  updateFuncionario(id: number, employee: Funcionario): Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/${id}`, employee);
+  }
+
+  deleteFuncionario(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 }

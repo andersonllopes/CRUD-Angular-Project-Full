@@ -1,7 +1,7 @@
-export interface Funcionario {
+export class Funcionario {
 
-  id: number;
-  nome: string;
-  sobrenome: string;
-  email: string;
+  id!: number;
+  nome!: string;
+  sobrenome!: string;
+  email!: string;
 }
